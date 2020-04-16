@@ -30,9 +30,9 @@ function Shop(props) {
         setModalProduct(product)
     }
 
-    let productList = products.map(product => {
+    let productList = products.map((product,i) => {
         return(
-            <div className="col s12 m4 l3" key={product.id}>
+            <div className="col s12 m4 l3" key={i}>
                 <div className="card">
                     <div className="card-image">
                         <Link to={`/shop/${product.id}`}>

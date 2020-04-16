@@ -1,7 +1,9 @@
 let initState = {
     cartProducts:[],
     cartQuantity: 0,
-    cartTotal: 0
+    cartTotal: 0,
+    sessionId: '',
+    address: ''
 }  
 
 export default function(state = initState, action) {
@@ -84,17 +86,17 @@ export default function(state = initState, action) {
         }
     }
 
-    if (action.type === 'ADD_SHIPPING') {
+    if (action.type === 'ADD_ADDRESS') {
         return {
             ...state,
-            cartTotal: state.cartTotal + 6
+            address: action.firstnam + action.firstname + action.address
         }
     }
 
-    if (action.type === 'REMOVE_SHIPPING') {
+    if (action.type === 'ADD_STRIPE_SESSION') {
         return {
             ...state,
-            cartTotal: state.cartTotal - 6
+            sessionId: action.sessionId
         }
     }
 

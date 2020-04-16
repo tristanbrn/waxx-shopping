@@ -1,59 +1,17 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-function Success(props) {
-       
-    let addedProducts = 
-        props.products.map(product=>{
-            return(
-                
-                <li className="cart-product" key={product.id}>
-                    <div className="product-img"> 
-                        <img src={product.img} alt={product.artist + " - " + product.title} className=""/>
-                    </div>
-                
-                    <div className="product-desc">
-                        <span className="title">{product.artist}</span>
-                        <p>{product.title}</p>
-                    </div>
-                    <div className="product-quantity">
-                        <b>{product.quantity}</b> 
-                    </div>
-                    <div className="product-price">
-                        <b>{(Math.round((product.price*product.quantity)*100)/100)}€</b>
-                    </div>
-
-                </li>                        
-            )
-        })
+function Success() {
 
     return(
-        <div>
-            <section className="title-area">
-                <div className="title-inner container center">
-                    <h5 className="page-title center">Paiement validé</h5>
-                </div>
-            </section>
-            <main>
-                <div className="container">   
-                    <p>Votre commande est en route ! Voici votre récapitulatif :</p>             
-                    <div className="cart">
-                        {addedProducts}
-                    </div> 
-                </div>
-            </main>
-        </div>
+        <main>
+            <div className="container center">
+                <h4 className="page-title">Paiement validé</h4>
+                <p>Votre commande est en route. Merci beaucoup !</p>     
+                <Link to="/shop" className="waves-effect waves-light btn-large">Retour à la boutique</Link>
+            </div>
+        </main>
     )
 }
 
-function mapStateToProps(state) {
-    return { 
-        products : state.cartProducts,
-        total : state.cartTotal
-    }
-}
-
-export default connect(
-    mapStateToProps,
-    null
-  )(Success)
+export default (Success)

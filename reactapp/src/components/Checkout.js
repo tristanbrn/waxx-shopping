@@ -19,7 +19,6 @@ const Checkout = (props) => {
             })
             const response = await data.json()
             setSessionId(response.id)
-            console.log(response)
         }
         createSession()
     }, [props.products])
@@ -28,6 +27,8 @@ const Checkout = (props) => {
         e.preventDefault();
         stripe.redirectToCheckout({
             sessionId: sessionId
+        }).then(function (result) {
+            console.log(result)
         });
     };
 
@@ -42,14 +43,20 @@ const Checkout = (props) => {
   );
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
     return { 
         products : state.cartProducts,
     }
 }
 
+const mapDispatchToProps = (dispatch) =>{
+    return{
+        addStripeSession: (sessionId) => {dispatch({type: 'ADD_STRIPE_SESSION', sessionId: sessionId})}
+    }
+}
+
 export default connect(
     mapStateToProps,
-    null
+    mapDispatchToProps
   )
   (Checkout)

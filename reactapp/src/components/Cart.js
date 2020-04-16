@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import Shipping from './Shipping'
-import Checkout from './Checkout'
 
 function Cart(props) {
 
@@ -72,11 +71,15 @@ function Cart(props) {
 
     const checkout = props.products.length ? 
         <div>
-            <span className="total-order">Total : {(Math.round((props.total)*100)/100)}€
-            </span>
-            <Shipping/>
-
-            <Checkout />
+            <div className="row">
+                <span className="right">Livraison offerte !</span>
+                <br/>
+                <span className="total-order right">Total : {(Math.round((props.total)*100)/100)}€
+                </span>
+            </div>
+            <div className="row">
+                <Shipping/>
+            </div>
         </div>
     : null;
 
@@ -102,7 +105,8 @@ function Cart(props) {
 function mapStateToProps(state) {
     return { 
         products : state.cartProducts,
-        total : state.cartTotal
+        total : state.cartTotal,
+        address : state.address
     }
 }
 

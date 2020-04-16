@@ -32,8 +32,8 @@ function Home(props) {
 
     let productList = products.map(product => {
         return(
-            <div className="col s12 m4 l3">
-                <div className="card" key={product.id}>
+            <div className="col s12 m4 l3" key={product.id}>
+                <div className="card">
                     <div className="card-image">
                         <Link to={`/shop/${product.id}`}>
                             <img src={product.img} alt={product.artist + " - " + product.title} />
