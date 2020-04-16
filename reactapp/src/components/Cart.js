@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import StripeCheckout from 'react-stripe-checkout'
 
 import Shipping from './Shipping'
+import Checkout from './Checkout'
 
 function Cart(props) {
 
@@ -76,10 +76,7 @@ function Cart(props) {
             </span>
             <Shipping/>
 
-            <div className="checkout">
-                <button className="waves-effect waves-light btn-large">Commander</button>
-                
-            </div>
+            <Checkout />
         </div>
     : null;
 

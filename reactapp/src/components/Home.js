@@ -16,7 +16,7 @@ function Home(props) {
         M.Modal.init(elems, options); 
 
         const productsFetch = async () => {
-            const data = await fetch('/products', {
+            const data = await fetch('/new-products', {
             method: 'GET'
             })
             const products = await data.json()
@@ -32,25 +32,25 @@ function Home(props) {
 
     let productList = products.map(product => {
         return(
-            <div className="card" key={product.id}>
+            <div className="col s12 m4 l3">
+                <div className="card" key={product.id}>
                     <div className="card-image">
                         <Link to={`/shop/${product.id}`}>
                             <img src={product.img} alt={product.artist + " - " + product.title} />
                         </Link>
                         <span className="card-title">{product.artist}</span>
                         <Link to={`/shop/${product.id}`}>
-                            <span className="btn-floating halfway-fab waves-effect waves-light red" ><i className="material-icons">album</i></span>
+                            <span className="btn-floating halfway-fab waves-effect waves-light" ><i className="material-icons">album</i></span>
                         </Link>
                     </div>
 
-                <div className="card-content">
-                    <p>{product.title}</p>
-                    <p className="price"><b>{product.price} €</b></p>
-
-                    <a className="waves-effect waves-light btn-small modal-trigger" href="#modal1" onClick={()=> handleClick(product)}>Ajouter au panier</a>
+                    <div className="card-content">
+                        <p>{product.title}</p>
+                        <p className="price"><b>{product.price} €</b></p>
+                        <a className="waves-effect waves-light btn-small modal-trigger" href="#modal1" onClick={()=> handleClick(product)}>Ajouter au panier</a>
+                    </div>
                 </div>
             </div>
-            
         )
     })
     return(
@@ -64,8 +64,8 @@ function Home(props) {
             </section>
             <main>
                 <div className="container">
-                    <h4 className="page-title center">Sélection</h4>
-                    <div className="products-list">
+                    <h4 className="page-title center">Les nouveautés</h4>
+                    <div className="row">
                         {productList}
                     </div>
                     <div id="modal1" className="modal">
