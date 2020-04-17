@@ -8,6 +8,9 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -16,7 +19,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client/public')));
 
 app.use('/', indexRouter);
 
@@ -36,9 +38,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// Handles any requests that don't match the ones above
-app.get('*', (req,res) =>{
-  res.sendFile(path.join(__dirname+'/client/public/index.html'));
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
+
+const port = process.env.PORT || 5000;
+app.listen(port);
 
 module.exports = app;
