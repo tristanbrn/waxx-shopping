@@ -18,7 +18,7 @@ function Navbar(props) {
             <nav>
                 <div className="container">
                     <div className="nav-wrapper">
-                        <Link to="/"><img src="http://localhost:3001/logo.png" height="64px" width="auto" alt="Logo Waxx shop" /></Link>
+                        <Link to="/"><img src="https://waxx.herokuapp.com/logo.png" height="64px" width="auto" alt="Logo Waxx shop" /></Link>
                         <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                         <ul className="right hide-on-med-and-down">
                             <li>
