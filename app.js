@@ -16,7 +16,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'client/public')));
 
 app.use('/', indexRouter);
 
@@ -38,7 +38,7 @@ app.use(function(err, req, res, next) {
 
 // Handles any requests that don't match the ones above
 app.get('*', (req,res) =>{
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.sendFile(path.join(__dirname+'/client/public/index.html'));
 });
 
 module.exports = app;
