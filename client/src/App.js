@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Navbar from './components/Navbar'
 import Home from './components/Home'
@@ -11,7 +11,7 @@ import Cancel from './components/Cancel'
 
 function App() {
   return (
-    <Router history={hashHistory} >
+    <Router>     
       <div className="App">
         <Navbar/>
         <Switch>
