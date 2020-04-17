@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Open+Sans:wght@300;700&display=swap');
+
+$main-color: #05386B;
+$white: #EDF5E1;
+$secondary-color: #5CDB95;
+$secondary-green: #26a69a;
+////////////////////////
+$font-text: normal 14px "Open Sans", sans-serif;
+$font-title: normal bold 2em "Josefin Sans", sans-serif;
+$font-subtitle: normal 1.5em "Josefin Sans", sans-serif;
+$font-page-title: normal bold 4em "Josefin Sans", sans-serif;
+$font-page-subtitle: normal bold 2.5em "Josefin Sans", sans-serif;
+
+body, h1,h2,h3,h4,h5,h6, p, span, a ,li {
+    color: $main-color;
+    letter-spacing: 0.5px;
+}
+h1,h2,h3,h4,h5,h6 {
+    font: $font-title;
+    margin: 0 0 20px;
+}
+main {
+    margin: 4em auto;
+}
+.page-title {
+    font: $font-title;
+    color: $main-color;
+    letter-spacing: 3px;
+}
+.title {
+    font: $font-subtitle;
+    color: $secondary-color;
+    text-transform: uppercase;
+}
+.subtitle {
+    font: $font-subtitle;
+    color: $secondary-green;
+}
+.btn, .btn-large, .btn-small {
+    background-color: $main-color;
+}
+.btn:hover, .btn-large:hover, .btn-small:hover {
+    background-color: #01172c;
+}
+
+/// NAVBAR ///
+nav {
+    color: $main-color;
+    background: $secondary-color;
+}
+nav ul a, nav ul i {
+    color: $main-color;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+span.cart-quantity {
+    background: $white;
+    position: absolute;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: $main-color;
+    font-weight: bold;
+    line-height: 1.6em;
+    text-align: center;
+    width: 1.6em;
+    top: 5px;
+    right: 5px;
+    font-size: 12px;
+}
+
+/// GENERIC PAGE ///
+.title-area {
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: $secondary-color;
+    color: $white;
+}
+.title-area h5 {
+    color: $white;
+    margin: 0;
+}
+
+/// HOMEPAGE ///
+.hero {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.hero h1 {
+    font: $font-page-title;
+    color: $main-color;
+}
+.hero h2 {
+    font: $font-page-subtitle;
+    color: $secondary-color;
+}
+.hero .btn-large {
+    box-shadow: none;
+    border: 1px solid #05386B;
+    background: transparent;
+    color: #05386B;
+}
+.homepage-ban {
+    height: 500px;
+    width: 100%;
+}
+.card .card-image {
+    width: 100%;
+}
+.card .card-image .card-title {
+    color: white;
+    text-shadow: 0 0 9px #888;
+    font-weight: 200;
+    padding: 10px 20px;
+}
+.card .card-content {
+    padding: 20px;
+    text-align: center;
+}
+.card .card-content p {
+    margin: 10px 0;
+}
+.card .card-content .product-price {
+    font-size: 18px;
+    margin: 1em 0 0 0;
+    color: #26a69a;
+}
+.card .btn-floating {
+    background-color: $secondary-color;
+}
+
+/// CART ///
+.cart {
+    margin: 2em 0;
+    padding: 1em;
+    border: 1px solid #d8d8d8;
+}
+.cart-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-product img{
+    width: 150px;
+    margin-right: 25px;
+}
+.product-desc{
+    flex: 2;
+}
+.product-quantity, .product-price {
+    flex: 1;
+}
+.product-quantity {
+    display: flex;
+    align-items: center;
+}
+.price {
+    color: #5cdb95;
+    margin: 0 0 20px;
+    font-size: 1.3em;
+}
+.total-order {
+    color: #05386B;
+    font-weight: 700;
+    font-size: 1.8em;
+    float: right;
+}
+.shipping-form {
+    margin: 2em 0;
+}
+.checkout {
+    text-align: right;
+}
+
+/// MODAL ///
+.modal-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+.modal-product img {
+    width: 150px;
+    margin-right: 25px;
+}
+.modal-product-desc {
+    flex: 2;
+}
+.modal-product-price {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+/// PRODUCT PAGE ///
+.product-details {
+    padding: 2em;
+}
+.product-price {
+    font-size: 1.5em;
+    font-weight: 500;
+}
