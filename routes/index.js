@@ -222,8 +222,6 @@ router.post('/payment', async function(req, res) {
     )
   })
 
-  console.log(newCart)
-
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: newCart,
